@@ -9,7 +9,7 @@
 void print_all(const char * const format, ...)
 {
 	int ix = 0;
-	char *stri, *sepa = "";
+	char *stri, *sep = "";
 
 	va_list list;
 
@@ -22,25 +22,25 @@ void print_all(const char * const format, ...)
 			switch (format[ix])
 			{
 				case 'c':
-					printf("%s%c", sepa, va_arg(list, int));
+					printf("%s%c", sep, va_arg(list, int));
 					break;
 				case 'i':
-					printf("%s%d", sepa, va_arg(list, int));
+					printf("%s%d", sep, va_arg(list, int));
 					break;
 				case 'f':
-					printf("%s%f", sepa, va_arg(list, double));
+					printf("%s%f", sep, va_arg(list, double));
 					break;
 				case 's':
 					stri = va_arg(list, char *);
 					if (!stri)
 						stri = "(nil)";
-					printf("%s%s", sepa, stri);
+					printf("%s%s", sep, stri);
 					break;
 				default:
 					i++;
 					continue;
 			}
-			sepa = ", ";
+			sep = ", ";
 			i++;
 		}
 	}
