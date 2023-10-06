@@ -1,0 +1,2 @@
+-This program is about simple recuring functions-
+-Recursions is where a function calls itself
